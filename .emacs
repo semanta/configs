@@ -42,3 +42,9 @@
 (setq js-indent-level 2)
 ;; css indentation offset
 (setq css-indent-offset 2)
+
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(setq web-mode-engines-alist
+  '(("php"    . "\\.phtml\\'")
+    ("blade"  . "\\.blade\\."))
+)
