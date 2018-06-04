@@ -18,7 +18,7 @@
  '(global-linum-mode t)
  '(package-selected-packages
    (quote
-    (vue-mode js2-mode twig-mode flymake-puppet php-mode web-mode magit all-the-icons neotree)))
+    (multiple-cursors vue-mode js2-mode twig-mode flymake-puppet php-mode web-mode magit all-the-icons neotree)))
  '(php-mode-coding-style (quote psr2)))
 
 (custom-set-faces
@@ -27,6 +27,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; neo tree setup
 (global-set-key [f8] 'neotree-toggle)
@@ -54,3 +61,5 @@
 (toggle-scroll-bar -1)
 (electric-pair-mode 1)
 (show-paren-mode 1)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
